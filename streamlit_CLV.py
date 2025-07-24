@@ -3,6 +3,7 @@ import pandas as pd
 import pickle
 import subprocess
 import os
+import sys
 
 # to execute this app : 
 # pip install -r requirements.txt
@@ -18,8 +19,8 @@ def download_model_if_needed():
         st.info("🔄 Téléchargement du modèle en cours...")
         try:
             # Exécuter le script de téléchargement
-            result = subprocess.run(["python", "download_model.py"], 
-                                  capture_output=True, text=True, check=True)
+            result = subprocess.run([sys.executable, "download_model.py"], 
+                        capture_output=True, text=True, check=True)
             st.success("✅ Modèle téléchargé avec succès!")
         except subprocess.CalledProcessError as e:
             st.error(f"❌ Erreur lors du téléchargement du modèle: {e}")
