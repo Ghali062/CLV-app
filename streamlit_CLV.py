@@ -12,7 +12,7 @@ import os
 @st.cache_resource
 def download_model_if_needed():
     """Télécharge le modèle depuis Google Drive si le fichier model.pkl n'existe pas"""
-    model_path = "model.pkl"
+    model_path = "clv_model_pipeline.pkl"
     
     if not os.path.exists(model_path):
         st.info("🔄 Téléchargement du modèle en cours...")
