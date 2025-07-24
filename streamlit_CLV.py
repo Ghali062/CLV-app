@@ -1,8 +1,38 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import subprocess
+import os
 
-# to execute this app : streamlit run streamlit_CLV.py    
+# to execute this app : 
+# pip install -r requirements.txt
+# $ streamlit run streamlit_CLV.py    
+
+# Télécharger le modèle si nécessaire
+@st.cache_resource
+def download_model_if_needed():
+    """Télécharge le modèle depuis Google Drive si le fichier model.pkl n'existe pas"""
+    model_path = "model.pkl"
+    
+    if not os.path.exists(model_path):
+        st.info("🔄 Téléchargement du modèle en cours...")
+        try:
+            # Exécuter le script de téléchargement
+            result = subprocess.run(["python", "download_model.py"], 
+                                  capture_output=True, text=True, check=True)
+            st.success("✅ Modèle téléchargé avec succès!")
+        except subprocess.CalledProcessError as e:
+            st.error(f"❌ Erreur lors du téléchargement du modèle: {e}")
+            st.error(f"Sortie d'erreur: {e.stderr}")
+            st.stop()
+        except FileNotFoundError:
+            st.error("❌ Script download_model.py non trouvé!")
+            st.stop()
+    
+    return model_path
+
+# Télécharger le modèle
+model_path = download_model_if_needed()
 
 # Configuration de la page
 st.set_page_config(
@@ -164,7 +194,7 @@ st.markdown("""
 # Charger le pipeline sauvegardé
 @st.cache_resource
 def load_pipeline():
-    with open("clv_model_pipeline.pkl", "rb") as f:
+    with open("model.pkl", "rb") as f:
         return pickle.load(f)
 
 try:
