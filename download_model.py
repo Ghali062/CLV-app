@@ -1,5 +1,9 @@
 
-import gdown
+try:
+    import gdown
+except ImportError:
+    print("❌ gdown non trouvé. Vérifie que gdown est bien dans requirements.txt")
+    raise
 import os
 
 MODEL_PATH = "clv_model_pipeline.pkl"
