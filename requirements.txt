@@ -2,4 +2,4 @@ flask
 scikit-learn==1.6.1
 pandas
 streamlit
-gdown
+gdown==5.1.0
