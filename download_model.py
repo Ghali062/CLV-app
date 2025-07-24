@@ -7,7 +7,7 @@ except ImportError:
 import os
 
 MODEL_PATH = "clv_model_pipeline.pkl"
-GDRIVE_ID = "1McG3vrjueVBdl5daB_2vCAEjcSY6amVU" # ID du fichier
+GDRIVE_ID = "1BSgd45ptErGHjwecOh8bmdXek33whtCy" # ID du fichier
 
 if not os.path.exists(MODEL_PATH):
     print("Downloading model from Google Drive...")
