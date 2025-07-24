@@ -194,7 +194,7 @@ st.markdown("""
 # Charger le pipeline sauvegardé
 @st.cache_resource
 def load_pipeline():
-    with open("model.pkl", "rb") as f:
+    with open("clv_model_pipeline.pkl", "rb") as f:
         return pickle.load(f)
 
 try:
