@@ -38,7 +38,9 @@ pip install -r requirements.txt
 ```bash
 streamlit run streamlit_CLV.py
 
-## ✅ Performance du modèle
+---
+ 
+# ✅ Performance du modèle
 
 Le modèle CLV utilisé est un **Random Forest Regressor** entraîné sur des données clients télécom.
 
