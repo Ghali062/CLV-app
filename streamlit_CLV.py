@@ -342,15 +342,6 @@ with col2:
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown("""
-    <div class="metric-card animated-card">
-        <h3>📊 Interprétation CLV</h3>
-        <p><strong>CLV < 3000:</strong> Client standard</p>
-        <p><strong>3000-6000:</strong> Client fidèle</p>
-        <p><strong>6000-10000:</strong> Client premium</p>
-        <p><strong>> 10000:</strong> Client VIP</p>
-    </div>
-    """, unsafe_allow_html=True)
 
 # Transformation des entrées, frequency_score : "Single", "Low", "Medium", "High" -> 1, 2, 3,4
 transformations = {
