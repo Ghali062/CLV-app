@@ -31,7 +31,9 @@ git clone https://github.com/ton-repo/clv-predictor.git
 cd clv-predictor
 pip install -r requirements.txt
 
-## 🛠️ Lancement
+---
+
+## 🛠️ Lancement 
 
 ```bash
 streamlit run streamlit_CLV.py
