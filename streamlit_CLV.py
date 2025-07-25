@@ -215,15 +215,6 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown("""
-    <div class="metric-card">
-        <h3>📈 Métriques CLV Télécoms</h3>
-        <p><strong>CLV Moyen:</strong> 4,250 MAD</p>
-        <p><strong>CLV Max:</strong> 18,000 MAD</p>
-        <p><strong>Abonnés actifs:</strong> 45,000+</p>
-        <p><strong>Durée moyenne:</strong> 24 mois</p>
-    </div>
-    """, unsafe_allow_html=True)
 
 # Fonctions pour les choix de valeurs (à adapter à ton projet si nécessaire)
 mois_options = list(range(1, 13))
